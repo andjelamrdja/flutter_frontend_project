@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_project_andjela/constants/constants.dart';
 import 'package:flutter_project_andjela/constants/uidata.dart';
+import 'package:flutter_project_andjela/views/home/widgets/food_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FoodsList extends StatelessWidget {
@@ -9,15 +10,17 @@ class FoodsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 210.h,
+        height: 184.h,
         padding: EdgeInsets.only(left: 12.w, top: 10.h),
         child: ListView(
           scrollDirection: Axis.horizontal,
-          children: List.generate(restaurants.length, (i) {
-            var food = restaurants[i];
-            return Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Container(height: 200.h, width: 150.w, color: kSecondary),
+          children: List.generate(foods.length, (i) {
+            var food = foods[i];
+            return FoodWidget(
+              image: food['imageUrl'],
+              title: food['title'],
+              time: food['time'],
+              price: food['price'].toStringAsFixed(2),
             );
           }),
         ));

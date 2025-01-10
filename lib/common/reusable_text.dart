@@ -6,6 +6,7 @@ class ReusableText extends StatelessWidget {
   final String text;
   final TextStyle style;
 
+  @override
   Widget build(BuildContext context) {
     return Text(
       text,

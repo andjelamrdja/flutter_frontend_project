@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {
-  RxString _category = ''.obs;
+  final RxString _category = ''.obs;
 
   String get categoryValue => _category.value;
 
@@ -10,7 +10,7 @@ class CategoryController extends GetxController {
     _category.value = value;
   }
 
-  RxString _title = ''.obs;
+  final RxString _title = ''.obs;
 
   String get titleValue => _category.value;
 

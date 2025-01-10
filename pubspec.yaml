@@ -79,3 +79,8 @@ flutter:
     - assets/images/
     - assets/anime/
     - assets/icons/
+    - assets/fastfoodrestaurants/
+    - assets/fastfoodrestaurants/restaurant1.jpeg
+    - assets/fastfoodrestaurants/restaurant2.jpeg
+    - assets/fastfoodrestaurants/restaurant3.jpeg
+    - assets/fastfoodrestaurants/restaurant4.jpeg

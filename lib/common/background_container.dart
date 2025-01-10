@@ -9,6 +9,7 @@ class BackGroundContainer extends StatelessWidget {
   final Widget child;
   final Color color;
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: width,

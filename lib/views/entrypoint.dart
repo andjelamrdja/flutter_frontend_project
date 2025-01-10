@@ -57,8 +57,8 @@ class MainScreen extends StatelessWidget {
                             label: 'Cart'),
                         BottomNavigationBarItem(
                             icon: controller.tabIndex == 3
-                                ? Icon(FontAwesome.user_circle)
-                                : Icon(FontAwesome.user_circle_o),
+                                ? const Icon(FontAwesome.user_circle)
+                                : const Icon(FontAwesome.user_circle_o),
                             label: 'Profile'),
                       ],
                     )),

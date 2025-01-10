@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
           child: CustomContainer(
               containerContent: Column(
             children: [
-              CategoryList(),
+              const CategoryList(),
               Heading(
                 text: "Nearby Restaurants",
                 onTap: () {

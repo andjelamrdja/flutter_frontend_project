@@ -4,6 +4,7 @@ import 'package:flutter_project_andjela/constants/constants.dart';
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -11,7 +12,7 @@ class CategoryPage extends StatelessWidget {
           backgroundColor: kOffWhite,
           title: const Text("Category Page"),
         ),
-        body: Center(
+        body: const Center(
           child: Text("Category Page"),
         ));
   }

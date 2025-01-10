@@ -8,6 +8,7 @@ import '../constants/constants.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
@@ -26,8 +27,8 @@ class CustomAppBar extends StatelessWidget {
                     CircleAvatar(
                       radius: 25.r,
                       backgroundColor: kSecondary,
-                      backgroundImage: const NetworkImage(
-                          'https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg'),
+                      backgroundImage:
+                          const AssetImage('assets/images/profile.jpg'),
                       //backgroundImage: CachedNetworkImageProvider(
                       // 'https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg',
                       // ),
