@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_andjela/common/app_style.dart';
 import 'package:flutter_project_andjela/common/reusable_text.dart';

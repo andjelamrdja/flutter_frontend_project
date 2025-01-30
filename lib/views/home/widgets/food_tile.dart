@@ -2,19 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_andjela/common/app_style.dart';
 import 'package:flutter_project_andjela/common/reusable_text.dart';
 import 'package:flutter_project_andjela/constants/constants.dart';
+import 'package:flutter_project_andjela/controllers/cart_controller.dart';
+import 'package:flutter_project_andjela/models/cart_request.dart';
+import 'package:flutter_project_andjela/models/foods.dart';
+import 'package:flutter_project_andjela/views/food/food_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:get/get.dart';
 
 class FoodTile extends StatelessWidget {
-  const FoodTile({super.key, required this.food});
+  const FoodTile({super.key, required this.food, this.color});
 
-  final dynamic food;
+  final FoodsModel food;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Get.to(() => FoodPage(food: food));
+        },
         child: Stack(
           clipBehavior: Clip.hardEdge,
           children: [
@@ -23,7 +32,7 @@ class FoodTile extends StatelessWidget {
                 height: 70.h,
                 width: width,
                 decoration: BoxDecoration(
-                  color: kOffWhite,
+                  color: color ?? kOffWhite,
                   borderRadius: BorderRadius.circular(9.r),
                 ),
                 child: Container(
@@ -38,8 +47,8 @@ class FoodTile extends StatelessWidget {
                               SizedBox(
                                 width: 70.w,
                                 height: 70.h,
-                                child: Image.asset(
-                                  food["imageUrl"],
+                                child: Image.network(
+                                  food.imageUrl[0],
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -71,19 +80,19 @@ class FoodTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ReusableText(
-                                text: food['title'],
+                                text: food.title,
                                 style: appStyle(11, kDark, FontWeight.w400)),
                             ReusableText(
-                                text: "Delivery time: ${food['time']}",
+                                text: "Delivery time: ${food.time}",
                                 style: appStyle(11, kGray, FontWeight.w400)),
                             SizedBox(
                               width: width * 0.7,
                               height: 15.h,
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: food['additives'].length,
+                                itemCount: food.additives.length,
                                 itemBuilder: (context, i) {
-                                  var additive = food['additives'][i];
+                                  var additive = food.additives[i];
                                   return Container(
                                     margin: EdgeInsets.only(right: 5.w),
                                     decoration: BoxDecoration(
@@ -96,7 +105,7 @@ class FoodTile extends StatelessWidget {
                                       child: Padding(
                                         padding: EdgeInsets.all(2.h),
                                         child: ReusableText(
-                                            text: additive['title'],
+                                            text: additive.title,
                                             style: appStyle(
                                                 8, kGray, FontWeight.w400)),
                                       ),
@@ -121,7 +130,7 @@ class FoodTile extends StatelessWidget {
                   ),
                   child: Center(
                     child: ReusableText(
-                        text: "\$ ${food['price'].toStringAsFixed(2)}",
+                        text: "\$ ${food.price.toStringAsFixed(2)}",
                         style: appStyle(12, kLightWhite, FontWeight.bold)),
                   ),
                 )),
@@ -129,7 +138,16 @@ class FoodTile extends StatelessWidget {
                 right: 75.w,
                 top: 6.h,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    var data = CartRequest(
+                        productId: food.id,
+                        additives: [],
+                        quantity: 1,
+                        totalPrice: food.price);
+
+                    String cart = cartRequestToJson(data);
+                    controller.addToCart(cart);
+                  },
                   child: Container(
                     width: 19.w,
                     height: 19.h,

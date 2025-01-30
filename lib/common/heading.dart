@@ -6,10 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class Heading extends StatelessWidget {
-  const Heading({super.key, required this.text, this.onTap});
+  const Heading({super.key, required this.text, this.onTap, this.more});
 
   final String text;
   final void Function()? onTap;
+  final bool? more;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +23,15 @@ class Heading extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 child: ReusableText(
                     text: text, style: appStyle(16, kDark, FontWeight.bold))),
-            GestureDetector(
-                onTap: onTap,
-                child: Icon(
-                  AntDesign.appstore1,
-                  color: kSecondary,
-                  size: 20.sp,
-                ))
+            more == null
+                ? GestureDetector(
+                    onTap: onTap,
+                    child: Icon(
+                      AntDesign.appstore1,
+                      color: kSecondary,
+                      size: 20.sp,
+                    ))
+                : const SizedBox.shrink()
           ],
         ));
   }

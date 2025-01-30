@@ -251,6 +251,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_otp_text_field:
+    dependency: transitive
+    description:
+      name: flutter_otp_text_field
+      sha256: "7a33285d22cafc38ea13a75ff61eff2c9b3c4860b59ba10838ad9b20ee72196d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0+2"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -669,6 +677,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  phone_otp_verification:
+    dependency: "direct main"
+    description:
+      name: phone_otp_verification
+      sha256: "642f5f7705159a821c84363259c41f9ff28b54c38caa1439e135081f498aee28"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   platform:
     dependency: transitive
     description:

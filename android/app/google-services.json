@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "303389567997",
+    "project_id": "foodly-flutter-992a8",
+    "storage_bucket": "foodly-flutter-992a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303389567997:android:64c12b7a5d9fbc5d8bc794",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project_andjela"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303389567997-qi432r3d2o2saci2mqkegn02d9f7f164.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjq5AXtqJQpL2ABOW8CX4P-Y76GBeFCBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303389567997-qi432r3d2o2saci2mqkegn02d9f7f164.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303389567997:android:56576471a13b39358bc794",
+        "android_client_info": {
+          "package_name": "com.mojprojekat.foodly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303389567997-qi432r3d2o2saci2mqkegn02d9f7f164.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjq5AXtqJQpL2ABOW8CX4P-Y76GBeFCBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303389567997-qi432r3d2o2saci2mqkegn02d9f7f164.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
