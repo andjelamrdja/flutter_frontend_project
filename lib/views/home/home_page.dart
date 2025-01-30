@@ -74,7 +74,6 @@ class HomePage extends StatelessWidget {
                                 duration: const Duration(milliseconds: 900));
                           },
                         ),
-
                         const CategoryFoodsList()
                       ],
                     )),

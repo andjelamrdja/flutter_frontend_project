@@ -7,6 +7,7 @@ import 'package:flutter_project_andjela/controllers/login_controller.dart';
 import 'package:flutter_project_andjela/models/login_response.dart';
 import 'package:flutter_project_andjela/views/auth/login_redirect.dart';
 import 'package:flutter_project_andjela/views/auth/verification_page.dart';
+import 'package:flutter_project_andjela/views/orders/user_orders.dart';
 import 'package:flutter_project_andjela/views/profile/widgets/profile_tile_widget.dart';
 import 'package:flutter_project_andjela/views/profile/widgets/user_info_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,7 +61,11 @@ class ProfilePage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     ProfileTileWidget(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => const UserOrders(),
+                              transition: Transition.cupertino,
+                              duration: const Duration(milliseconds: 600));
+                        },
                         title: "My Orders",
                         icon: Ionicons.fast_food_outline),
                     ProfileTileWidget(

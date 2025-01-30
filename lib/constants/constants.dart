@@ -29,3 +29,11 @@ final List<String> verificationReasons = [
   'Effortless Rescheduling: Easily address issues with a quick call.',
   'Exclusive Offers: Stay in the loop for special deals and promotions.'
 ];
+
+List<String> orderList = [
+  "Pending",
+  "Preparing",
+  "Delivering",
+  "Delivered",
+  "Canceled",
+];
